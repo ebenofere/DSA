@@ -1,9 +1,9 @@
-function sum(a, b) {
-  let sum = a + b;
-  console.log(sum);
+function eligibleToVote(age) {
+  if (age < 18) {
+    console.log("Not eligible to vote");
+  } else {
+    console.log("Eligible to vote");
+  }
 }
 
-let x = 7;
-let y = 6;
-
-sum(x, y);
+eligibleToVote(-1);
