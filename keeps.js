@@ -60,7 +60,7 @@ for (i = 0; i < arr.length; i++) {
 
 // ------------------------------------------------------------------------------------------------------------------
 
-// a program to spot the even numbers in a given array
+// Check and Print Even Numbers in an Array
 let arr = [10, 4, 5, 7, 3, 2, 9, 1];
 
 for (i = 0; i < arr.length; i++) {

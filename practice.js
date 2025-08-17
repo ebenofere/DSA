@@ -1,8 +1,11 @@
-// a program to spot the even numbers in a given array
-let arr = [10, 4, 5, 7, 3, 2, 9, 1];
+// Write a function that searches for an element in an array and returns the index.
+// If the element is not present, then just return -1
 
-for (i = 0; i < arr.length; i++) {
-  if (arr[i] % 2 == 0) {
-    console.log(`this number ${arr[i]} is an even number`);
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+function searchElement(arr) {
+  for (i = 0; i < arr.length; i++) {
+    console.log(`the index of ${arr[i]} is ${i} `);
   }
 }
+searchElement(arr);
