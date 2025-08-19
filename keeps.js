@@ -63,7 +63,7 @@ for (i = 0; i < arr.length; i++) {
 // Check and Print Even Numbers in an Array
 let arr = [10, 4, 5, 7, 3, 2, 9, 1];
 
-for (i = 0; i < arr.length; i++) {
+for (let i = 0; i < arr.length; i++) {
   if (arr[i] % 2 == 0) {
     console.log(`this number ${arr[i]} is an even number`);
   }
@@ -75,7 +75,7 @@ for (i = 0; i < arr.length; i++) {
 // If the element is not present, then just return -1
 
 function searchElement(arr, num) {
-  for (i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] == num) {
       return i;
     }
@@ -87,3 +87,28 @@ arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let num = 4;
 let elementFinder = searchElement(arr, num);
 console.log(elementFinder);
+
+// ------------------------------------------------------------------------------------------------------------------
+
+// Write a function that returns the number of negative numbers in an array
+// This function loops through an array, counts how many elements are negative, and returns that count.
+
+function CountNegative(arr) {
+  // initialize inside the function
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    // check strictly for negatives
+    if (arr[i] < 0) {
+      count += 1;
+    }
+  }
+
+  return count;
+}
+
+arr = [3, -7, 46, 70, -98, 67, -44, 20, 65, -17, 49, -60];
+
+let result = CountNegative(arr);
+
+console.log(result);
