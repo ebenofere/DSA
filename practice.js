@@ -3,9 +3,13 @@
 
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-function searchElement(arr) {
+function searchElement(arr, num) {
   for (i = 0; i < arr.length; i++) {
-    console.log(`the index of ${arr[i]} is ${i} `);
+    if (arr[num] == num) {
+      console.log(`the index of ${arr[i]} is ${i} `);
+    } else {
+      console.log("-1");
+    }
   }
 }
-searchElement(arr);
+searchElement(arr, 0);
