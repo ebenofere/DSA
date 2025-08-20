@@ -83,7 +83,7 @@ function searchElement(arr, num) {
   return -1;
 }
 
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let num = 4;
 let elementFinder = searchElement(arr, num);
 console.log(elementFinder);
@@ -107,7 +107,7 @@ function CountNegative(arr) {
   return count;
 }
 
-arr = [3, -7, 46, 70, -98, 67, -44, 20, 65, -17, 49, -60];
+let arr = [3, -7, 46, 70, -98, 67, -44, 20, 65, -17, 49, -60];
 
 let result = CountNegative(arr);
 
@@ -130,7 +130,7 @@ function findLargest(arr) {
   return max;
 }
 
-arr = [3, -7, 46, 70, -98, 67, -44, 20, 65, -17, 49, -60];
+let arr = [3, -7, 46, 70, -98, 67, -44, 20, 65, -17, 49, -60];
 let result = findLargest(arr);
 console.log(result);
 
@@ -150,6 +150,78 @@ function findSmallest(arr) {
   return max;
 }
 
-arr = [3, -7, 46, 70, -98, 67, -44, 20, 65, -17, 49, -60];
+let arr = [3, -7, 46, 70, -98, 67, -44, 20, 65, -17, 49, -60];
 let result = findSmallest(arr);
 console.log(result);
+
+// ------------------------------------------------------------------------------------------------------------------
+
+// Find the second largest number in an array
+
+function secondLargest(arr) {
+  // Initialize variables to track largest and second largest
+  // Using -Infinity ensures any number in the array will be larger
+  let largest = -Infinity;
+  let secondLargest = -Infinity;
+
+  // First loop: Find the largest number in the array
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      largest = arr[i]; // Update largest when we find a bigger number
+    }
+  }
+
+  // Create a new array excluding all instances of the largest number
+  // This removes duplicates of the largest value
+  let newArr = arr.filter((num) => num !== largest);
+
+  // Second loop: Find the largest number in the filtered array
+  // This will be our second largest from the original array
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr[i] > secondLargest) {
+      secondLargest = newArr[i];
+    }
+  }
+
+  // Return the second largest number found
+  return secondLargest;
+}
+
+let arr = [5, 6, 4, 8, 10, 20, 12, 5, 19, 7];
+let result = secondLargest(arr);
+console.log(result);
+
+// ------------------------------------------------------------------------------------------------------------------
+
+// Find the second largest number in an array
+// >>> a more efficient way - O(n) time complexity, single pass
+// second solution
+
+function secondLargest(arr) {
+  // Initialize both variables to -Infinity to handle negative numbers correctly
+  let largest = -Infinity;
+  let secondLargest = -Infinity;
+
+  // Single pass through the array - O(n) time complexity
+  for (let i = 0; i < arr.length; i++) {
+    // If current element is larger than our current largest
+    if (arr[i] > largest) {
+      // Move the current largest to second largest before updating
+      secondLargest = largest;
+      largest = arr[i];
+    }
+    // If current element is not the largest but is larger than second largest
+    // This condition also handles duplicates of the largest number
+    else if (arr[i] > secondLargest) {
+      secondLargest = arr[i];
+    }
+  }
+
+  // Note: Returns -Infinity if array has fewer than 2 distinct elements
+  return secondLargest;
+}
+
+// Test array with various numbers including duplicates
+let arr = [5, 6, 4, 8, 10, 20, 12, 5, 19, 7];
+let result = secondLargest(arr);
+console.log(result); // Expected output: 19 (second largest after 20)
