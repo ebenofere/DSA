@@ -1,10 +1,10 @@
-// Write a function that returns the largest number in an arry
+// Write a function that returns the smallest number in an arry
 
-function findLargest(arr) {
-  let max = 0;
+function findSmallest(arr) {
+  let max = Infinity;
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > max) {
+    if (arr[i] < max) {
       max = arr[i];
     }
   }
@@ -13,5 +13,5 @@ function findLargest(arr) {
 }
 
 arr = [3, -7, 46, 70, -98, 67, -44, 20, 65, -17, 49, -60];
-let result = findLargest(arr);
+let result = findSmallest(arr);
 console.log(result);
