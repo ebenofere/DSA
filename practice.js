@@ -1,17 +1,26 @@
-// Write a function that returns the smallest number in an arry
+// Find the second largest number in an array
 
-function findSmallest(arr) {
-  let max = Infinity;
+function secondLargest(arr) {
+  let L = -Infinity;
+  let SL = -Infinity;
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < max) {
-      max = arr[i];
+    if (arr[i] > L) {
+      L = arr[i];
     }
   }
 
-  return max;
+  let newArr = arr.filter((num) => num !== L);
+
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr[i] > SL) {
+      SL = newArr[i];
+    }
+  }
+
+  return SL;
 }
 
-arr = [3, -7, 46, 70, -98, 67, -44, 20, 65, -17, 49, -60];
-let result = findSmallest(arr);
+let arr = [5, 6, 4, 8, 10, 20, 12, 5, 19, 7];
+let result = secondLargest(arr);
 console.log(result);
