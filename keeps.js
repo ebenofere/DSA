@@ -264,3 +264,13 @@ function secondLargest(arr) {
 let arr = [-5, 6, 4, -8, 10, 20, -12, 5, 19, 7, 20];
 let result = secondLargest(arr);
 console.log(result); // Expected output: 19 (second largest after 20)
+
+// ------------------------------------------------------------------------------------------------------------------
+
+// loop within a loop
+
+for (let i = 0; i < 5; i++) {
+  for (let j = 0; j < 5; j++) {
+    console.log(`i is ${i} and j is ${j}`);
+  }
+}
